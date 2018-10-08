@@ -1,6 +1,7 @@
 package com.innocv.androidcodetest.data.repository.user
 
 import com.innocv.androidcodetest.data.datasource.api.ApiClientGenerator
+import com.innocv.androidcodetest.data.datasource.api.user.UserApi
 import com.innocv.androidcodetest.data.repository.BaseRepository
 import com.innocv.androidcodetest.domain.User
 import com.innocv.androidcodetest.domain.repository.UserRepository
@@ -11,7 +12,10 @@ class UserDataRepository @Inject constructor(
 ): BaseRepository(), UserRepository {
 
     override fun getUserList(): List<User> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val userApi = apiClientGenerator.generateApi(UserApi::class.java)
+        val call = userApi.getUsers()
+
+        return executeCall(call).map { it.mapToDomain() }
     }
 
     override fun getUserById(id: String): User {
