@@ -18,16 +18,11 @@ class UserDataRepository @Inject constructor(
         return executeCall(call).map { it.mapToDomain() }
     }
 
-    override fun getUserById(id: String): User {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun createUser(user: User) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        val userApi = apiClientGenerator.generateApi(UserApi::class.java)
+        val call  = userApi.create(user.mapToData())
 
-    override fun updateUser(user: User) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.executeCall(call)
     }
 
     override fun removeUser(id: String) {

@@ -1,7 +1,10 @@
 package com.innocv.androidcodetest.presentation.base.utils
 
 import android.content.Context
+import android.support.v7.widget.AppCompatEditText
 import android.support.v7.widget.SearchView
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
@@ -22,6 +25,25 @@ fun View.invisible() {
     visibility = View.INVISIBLE
 }
 
+fun AppCompatEditText.afterTextChanged(afterTextChanged: ((String) -> Unit)?) {
+    this.addTextChangedListener(object: TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            afterTextChanged?.invoke(s.toString())
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+    })
+}
+
+fun AppCompatEditText.validate(validator: (String) -> Boolean, message: String) {
+    this.afterTextChanged {
+        this.error = if (validator(it)) null else message
+    }
+
+    this.error = if (validator(this.text.toString())) null else message
+}
 
 fun ImageView.showCircleImage(context: Context, url: String? = null) {
     Glide.with(context)
