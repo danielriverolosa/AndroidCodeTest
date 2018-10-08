@@ -3,6 +3,7 @@ package com.innocv.androidcodetest.infrastructure.di.component
 import com.innocv.androidcodetest.infrastructure.di.module.ViewModule
 import com.innocv.androidcodetest.infrastructure.di.scope.ViewScope
 import com.innocv.androidcodetest.presentation.main.MainActivity
+import com.innocv.androidcodetest.presentation.main.fragment.UserListFragment
 import dagger.Subcomponent
 
 
@@ -16,4 +17,5 @@ interface ViewComponent {
 
     fun inject(activity: MainActivity)
 
+    fun inject(userListFragment: UserListFragment)
 }
