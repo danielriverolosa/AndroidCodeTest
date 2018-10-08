@@ -29,7 +29,7 @@ class UserListPresenter @Inject constructor(
     }
 
     fun onClickUser(user: User) {
-        
+        navigator.showUserDetail(user)
     }
 
     fun onClickAddUser() {
