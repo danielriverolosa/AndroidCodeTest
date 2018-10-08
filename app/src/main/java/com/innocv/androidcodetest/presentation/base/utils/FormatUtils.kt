@@ -11,6 +11,16 @@ fun Date?.formatDate(): String {
     return formatter.format(this)
 }
 
+fun Date?.formatServiceDate(): String {
+    val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", locale)
+    return formatter.format(this)
+}
+
+fun String?.parseFormalDate(): Date {
+    val formatter = SimpleDateFormat("dd 'de' MMMM 'de' yyyy", locale)
+    return formatter.parse(this)
+}
+
 fun String.parseDate(): Date {
     val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", locale)
     return formatter.parse(this)

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.innocv.androidcodetest.R
 import com.innocv.androidcodetest.domain.User
 import com.innocv.androidcodetest.presentation.main.MainActivity
+import com.innocv.androidcodetest.presentation.main.fragment.RegisterUserFragment
 import com.innocv.androidcodetest.presentation.main.fragment.UserDetailFragment
 import javax.inject.Inject
 
@@ -34,6 +35,10 @@ class Navigator @Inject constructor(private val context: Context) {
 
     fun showUserDetail(user: User) {
         showFragment(R.id.fragmentContainer, UserDetailFragment.getInstance(user), true)
+    }
+
+    fun showRegisterUser() {
+        showFragment(R.id.fragmentContainer, RegisterUserFragment.getInstance(), true)
     }
 
 }

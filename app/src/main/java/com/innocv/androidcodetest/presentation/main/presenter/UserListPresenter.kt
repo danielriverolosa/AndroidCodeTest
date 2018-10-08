@@ -33,7 +33,7 @@ class UserListPresenter @Inject constructor(
     }
 
     fun onClickAddUser() {
-
+        navigator.showRegisterUser()
     }
 
     fun onClickDelete(user: User) {
