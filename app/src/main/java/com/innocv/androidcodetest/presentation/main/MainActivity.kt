@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.innocv.androidcodetest.R
 import com.innocv.androidcodetest.infrastructure.di.component.ViewComponent
 import com.innocv.androidcodetest.presentation.base.BaseActivity
+import com.innocv.androidcodetest.presentation.main.fragment.UserListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity: BaseActivity() {
@@ -14,6 +15,7 @@ class MainActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initToolbar()
+        initFragmentContainer(R.id.fragmentContainer, UserListFragment.getInstance())
     }
 
     override fun initializeInjector(viewComponent: ViewComponent) {
