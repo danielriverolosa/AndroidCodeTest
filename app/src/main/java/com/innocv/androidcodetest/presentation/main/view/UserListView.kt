@@ -11,4 +11,6 @@ interface UserListView: BaseView {
 
     fun onFilterUsers(userList: List<User>)
 
+    fun onUserDeleted(user: User)
+
 }
