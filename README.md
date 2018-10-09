@@ -1,4 +1,6 @@
-### Android Code Test
+<p align="center">
+  <img src="innocv_logo.png"/></p>
+
 This is an INNOCV code test to check the ability of candidates, the intention is to know the fluidity and knowledge they have with common and basic tasks that must be well established as architecture, design patterns and unit tests.
 
 The candidate must complete the test in approximately one hour, must apply the knowledge he has, along with the technologies already used by the project. It is not necessary to use more libraries than those already used in the project.
