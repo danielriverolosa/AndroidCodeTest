@@ -93,4 +93,8 @@ class UserListFragment: BaseFragment(), UserListView {
         adapter.swapData(userList)
     }
 
+    override fun onUserDeleted(user: User) {
+        adapter.notifyItemDeleted(user)
+    }
+
 }

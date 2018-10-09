@@ -36,15 +36,7 @@ class UserListAdapter : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
     }
 
     fun notifyItemDeleted(user: User) {
-        val index = userList.indexOfFirst { it.id == user.id }
-        userList.removeAt(index)
-        notifyItemRemoved(index)
-    }
-
-    fun notifyItemModified(user: User) {
-        val index = userList.indexOfFirst { it.id == user.id }
-        userList[index] = user
-        notifyItemChanged(index)
+        // TODO: Implement delete item notification
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

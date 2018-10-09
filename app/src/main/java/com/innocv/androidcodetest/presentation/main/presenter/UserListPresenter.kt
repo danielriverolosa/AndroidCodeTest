@@ -2,6 +2,7 @@ package com.innocv.androidcodetest.presentation.main.presenter
 
 import com.innocv.androidcodetest.domain.User
 import com.innocv.androidcodetest.domain.interactor.UseCase.None
+import com.innocv.androidcodetest.domain.interactor.delete.DeleteUserUseCase
 import com.innocv.androidcodetest.domain.interactor.user.UserListUseCase
 import com.innocv.androidcodetest.presentation.base.BasePresenter
 import com.innocv.androidcodetest.presentation.main.view.UserListView
@@ -37,7 +38,11 @@ class UserListPresenter @Inject constructor(
     }
 
     fun onClickDelete(user: User) {
+        // TODO: Implement functionality to delete user
+    }
 
+    private fun onSuccessDelete(user: User) {
+        //TODO: Implement actions for when delete has been successful
     }
 
     fun filterUserList(text: String) {

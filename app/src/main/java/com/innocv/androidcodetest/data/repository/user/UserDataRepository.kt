@@ -26,6 +26,6 @@ class UserDataRepository @Inject constructor(
     }
 
     override fun removeUser(id: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //TODO: Implement API call
     }
 }
