@@ -28,6 +28,21 @@ abstract class BaseRepository {
         }
     }
 
+    protected fun <T> executeEmptyCall(call: Call<T>) {
+        try {
+            val response = call.execute()
+            if (!response.isSuccessful) {
+                handleHttpError(response)
+            }
+        } catch (e: IOException) {
+            if (e is SocketTimeoutException) {
+                throw ConnectionTimeoutException()
+            } else {
+                throw NoConnectionException()
+            }
+        }
+    }
+
     @Throws(IOException::class)
     private fun <T> handleHttpError(response: Response<T>) {
         throw HttpException(response)
