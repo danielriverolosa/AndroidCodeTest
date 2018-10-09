@@ -20,9 +20,9 @@ class UserDataRepository @Inject constructor(
 
     override fun createUser(user: User) {
         val userApi = apiClientGenerator.generateApi(UserApi::class.java)
-        val call  = userApi.create(user.mapToData())
+        val call = userApi.create(user.mapToData())
 
-        this.executeCall(call)
+        executeEmptyCall(call)
     }
 
     override fun removeUser(id: String) {
