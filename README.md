@@ -1,4 +1,7 @@
-### Android Code Test
+
+<p align="center">
+  <img src="innocv_logo.png"/></p>
+  
 This is the code base for a test destinated to identify the skills of the candidates in Android. The intention is to know the fluidity and knowledge they have with common tasks in a real project, like architecture, design patterns and unit testing.
 
 The recommended time to finish the exercise in approximately one hour. Even when the exercise is very easy, apply as much knowledge as you have respecting the architecture and the technologies already present in the project. There is no need to import more libraries.
